@@ -1,0 +1,6 @@
+{
+  "name": "Maison Nirya",
+  "description": "Luxury Indian haute couture and bridal fashion website converted to plain HTML, CSS, and Bootstrap 5.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

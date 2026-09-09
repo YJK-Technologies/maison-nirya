@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maison Nirya</title>
+    <meta name="description" content="Maison Nirya is an Indian luxury haute couture and bridal fashion house, celebrating centuries of zardozi embroidery, handwoven textiles, and modern architectural silhouettes." />
+    <meta name="keywords" content="Indian couture, bridal lehengas, luxury sarees, designer sherwanis, zardozi embroidery, haute couture, Indian fashion house, bespoke bridal" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <link rel="icon" type="image/jpeg" href="/public/assets/logo.jpg" />
+
+    <!-- Apply saved theme before paint to avoid flash -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('aurelia-theme');
+          var theme = stored === 'light' || stored === 'dark'
+            ? stored
+            : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- FontAwesome 6 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <!-- Skip to content -->
+    <a href="#main-content" class="skip-link visually-hidden-focusable">Skip to content</a>
+
+    <!-- Header / Navbar -->
+    <header class="site-header" id="siteHeader">
+      <div class="container-fluid px-4 px-lg-5 d-flex align-items-center justify-content-between">
+        <a href="#home" class="d-inline-flex align-items-center text-decoration-none">
+          <img src="/public/assets/logo.jpg" alt="Maison Nirya" class="logo-img" />
+          <span class="ms-3 font-display fs-4 d-none d-sm-inline" style="font-family: var(--font-display); letter-spacing: 0.04em;">Maison Nirya</span>
+        </a>
+
+        <nav class="d-none d-lg-flex gap-4 align-items-center mx-auto" aria-label="Primary Navigation" id="desktopNav">
+          <a href="#home" class="nav-link-custom active">Home</a>
+          <a href="#about" class="nav-link-custom">About Us</a>
+          <a href="#women" class="nav-link-custom">Women</a>
+          <a href="#men" class="nav-link-custom">Men</a>
+          <!-- <a href="#contact" class="nav-link-custom">Contact Us</a> -->
+        </nav>
+
+        <div class="d-flex align-items-center gap-3 ms-auto ms-lg-0">
+          <button class="nav-link-custom border-0 bg-transparent" onclick="toggleTheme()" aria-label="Toggle Theme" title="Switch Theme">
+            <i id="themeIcon" class="fa-solid fa-moon fs-5"></i> <span class="d-none d-md-inline ms-1">Theme</span>
+          </button>
+          <button class="d-lg-none nav-link-custom border-0 bg-transparent fs-4" onclick="openMobileMenu()" aria-label="Open Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Menu Offcanvas Drawer -->
+    <div class="offcanvas offcanvas-end bg-page text-primary" tabindex="-1" id="mobileMenuDrawer" aria-labelledby="mobileMenuLabel" style="width: 300px;">
+      <div class="offcanvas-header border-bottom border-subtle py-4 px-4">
+        <h5 class="offcanvas-title font-display fs-4" id="mobileMenuLabel">Maison Nirya</h5>
+        <button type="button" class="btn-close text-reset shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body px-4 py-5 d-flex flex-column justify-content-between">
+        <nav class="d-flex flex-column gap-4" aria-label="Mobile Navigation" id="mobileNavLinks">
+          <a href="#home" class="nav-link-custom fs-4 active">Home</a>
+          <a href="#about" class="nav-link-custom fs-4">About Us</a>
+          <a href="#women" class="nav-link-custom fs-4">Women</a>
+          <a href="#men" class="nav-link-custom fs-4">Men</a>
+          <!-- <a href="#contact" class="nav-link-custom fs-4">Contact Us</a> -->
+        </nav>
+        <div class="border-top border-subtle pt-4 text-secondary small">
+          <p class="mb-1 text-uppercase" style="letter-spacing: 0.1em; font-size: 0.75rem;">Client Concierge</p>
+          <p class="mb-0 fw-medium">+91 94980 68085</p>
+        </div>
+      </div>
+    </div>
+
+    <main id="main-content">
+      <!-- Hero Section with Background Video -->
+      <section id="home" class="hero-section">
+        <video
+          autoplay
+          loop
+          muted
+          playsinline
+          class="hero-bg hero-video-anim"
+          poster="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=1920&q=85"
+        >
+          <!-- <source src="https://assets.mixkit.co/videos/preview/mixkit-models-walking-on-a-catwalk-41584-large.mp4" type="video/mp4" /> -->
+           <source src="/public/assets/fashion2.mp4" type="video/mp4" /> 
+          Your browser does not support the video tag.
+        </video>
+        <div class="hero-scrim"></div>
+        <div class="hero-content animate-fade-up">
+          <p class="eyebrow text-white opacity-75">Bridal &amp; Couture, Autumn/Winter 2026</p>
+          <h1 class="hero-title">The Art of Modern Couture</h1>
+          <p class="hero-sub">Where heritage meets modern elegance.</p>
+          <div>
+            <a href="#women" class="btn btn-ghost-light">Explore Collection</a>
+          </div>
+        </div>
+        <div class="position-absolute bottom-0 start-50 translate-middle-x pb-4 d-none d-md-block" aria-hidden="true">
+          <span class="scroll-line"></span>
+        </div>
+      </section>
+
+      <!-- About Us Section -->
+      <section id="about" class="section-padding bg-page">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+              <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1000&q=85" alt="Atelier Master Artisan" class="w-100 object-fit-cover shadow-sm" style="aspect-ratio: 3/4;" loading="lazy" />
+            </div>
+            <div class="col-lg-6">
+              <span class="eyebrow">About Us</span>
+              <h2 class="display-6 mb-4" style="font-family: var(--font-display);">Crafted With Heritage. Designed For The Future.</h2>
+              <p class="text-secondary mb-4" style="line-height: 1.8;">
+                Maison Nirya began as a single embroidery table in an old Lucknow workshop. Two decades on, the same hand-worked techniques sit alongside a modern eye for silhouette — every piece still passes through the hands of artisans who learned their craft from the generation before them.
+              </p>
+              <div class="row g-4 mt-2">
+                <div class="col-md-4">
+                  <h4 class="fs-5 font-display text-gold">Heritage</h4>
+                  <p class="small text-secondary">Centuries of zardozi and gota patti preservation.</p>
+                </div>
+                <div class="col-md-4">
+                  <h4 class="fs-5 font-display text-gold">Devotion</h4>
+                  <p class="small text-secondary">400–600 hours of continuous hand needlework.</p>
+                </div>
+                <div class="col-md-4">
+                  <h4 class="fs-5 font-display text-gold">Modern Fit</h4>
+                  <p class="small text-secondary">Boned foundations built for effortless movement.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Women Section -->
+      <section id="women" class="section-padding bg-page border-top">
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-end mb-5 flex-wrap gap-3">
+            <div>
+              <span class="eyebrow">Women's Collection</span>
+              <h2 class="display-6" style="font-family: var(--font-display);">Bridal Lehengas &amp; Silk Sarees</h2>
+            </div>
+            <div class="d-flex gap-2 flex-wrap">
+              <button class="btn btn-sm btn-outline-dark active" onclick="filterWomen('all', this)">All Women</button>
+              <button class="btn btn-sm btn-outline-dark" onclick="filterWomen('Lehengas', this)">Lehengas</button>
+              <button class="btn btn-sm btn-outline-dark" onclick="filterWomen('Sarees', this)">Sarees</button>
+              <button class="btn btn-sm btn-outline-dark" onclick="filterWomen('Anarkalis', this)">Anarkalis</button>
+            </div>
+          </div>
+
+          <!-- Initial Women Grid -->
+          <div id="womenInitialGrid" class="row g-4">
+            <!-- Populated via JS -->
+          </div>
+
+          <!-- Extended Women Collections (Hidden by default, smooth slide down) -->
+          <div id="womenExtended" class="extended-collections">
+            <div id="womenExtendedGrid" class="row g-4">
+              <!-- Populated via JS -->
+            </div>
+          </div>
+
+          <!-- Explore More Button for Women -->
+          <div class="text-center mt-5">
+            <button id="womenBtn" class="btn btn-dark px-5 py-3 rounded-0" onclick="toggleCollections('womenExtended', 'womenBtn')">
+              Explore More Collections <i class="fa-solid fa-arrow-down ms-2"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Men Section -->
+      <section id="men" class="section-padding bg-page border-top">
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-end mb-5 flex-wrap gap-3">
+            <div>
+              <span class="eyebrow">Men's Collection</span>
+              <h2 class="display-6" style="font-family: var(--font-display);">Royal Sherwanis &amp; Bandhgalas</h2>
+            </div>
+            <div class="d-flex gap-2 flex-wrap">
+              <button class="btn btn-sm btn-outline-dark active" onclick="filterMen('all', this)">All Men</button>
+              <button class="btn btn-sm btn-outline-dark" onclick="filterMen('Sherwanis', this)">Sherwanis</button>
+              <button class="btn btn-sm btn-outline-dark" onclick="filterMen('Bandhgalas', this)">Bandhgalas</button>
+              <button class="btn btn-sm btn-outline-dark" onclick="filterMen('Indo-Western', this)">Indo-Western</button>
+            </div>
+          </div>
+
+          <!-- Initial Men Grid -->
+          <div id="menInitialGrid" class="row g-4">
+            <!-- Populated via JS -->
+          </div>
+
+          <!-- Extended Men Collections (Hidden by default, smooth slide down) -->
+          <div id="menExtended" class="extended-collections">
+            <div id="menExtendedGrid" class="row g-4">
+              <!-- Populated via JS -->
+            </div>
+          </div>
+
+          <!-- Explore More Button for Men -->
+          <div class="text-center mt-5">
+            <button id="menBtn" class="btn btn-dark px-5 py-3 rounded-0" onclick="toggleCollections('menExtended', 'menBtn')">
+              Explore More Collections <i class="fa-solid fa-arrow-down ms-2"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Us Section -->
+      <!-- <section id="contact" class="section-padding bg-page border-top">
+        <div class="container">
+          <div class="row g-5">
+            <div class="col-lg-6">
+              <span class="eyebrow">Contact Us</span>
+              <h2 class="display-6 mb-4" style="font-family: var(--font-display);">Send Us a Message</h2>
+              <p class="text-secondary mb-4">Our client concierge is available to assist with orders, international shipping, and bespoke appointments.</p>
+              
+              Form configured for Google Apps Script fetch submission
+              <form id="contactForm">
+                <div class="mb-3">
+                  <label for="msgName" class="form-label small text-uppercase text-secondary">Your Name</label>
+                  <input type="text" class="form-control rounded-0 border-0 border-bottom border-secondary bg-transparent" id="msgName" name="Name" required />
+                </div>
+                <div class="mb-3">
+                  <label for="msgEmail" class="form-label small text-uppercase text-secondary">Email Address</label>
+                  <input type="email" class="form-control rounded-0 border-0 border-bottom border-secondary bg-transparent" id="msgEmail" name="Email" required />
+                </div>
+                <div class="mb-3">
+                  <label for="msgBody" class="form-label small text-uppercase text-secondary">Message</label>
+                  <textarea class="form-control rounded-0 border-0 border-bottom border-secondary bg-transparent" id="msgBody" name="Message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-dark">Send Message</button>
+                <div id="contactResponse" class="mt-2"></div>
+              </form>
+            </div>
+            <div class="col-lg-6 d-flex flex-column justify-content-center">
+              <div class="p-4 bg-surface border border-subtle">
+                <h3 class="fs-4 font-display mb-3">Client Concierge</h3>
+                <p class="text-secondary small mb-2"><i class="fa-solid fa-phone me-2 text-gold"></i> +91 94980 68085</p>
+                <p class="text-secondary small mb-2"><i class="fa-solid fa-envelope me-2 text-gold"></i> MaisonNirya@gmail.com</p>
+                <p class="text-secondary small mb-0"><i class="fa-solid fa-clock me-2 text-gold"></i> Monday – Saturday: 10:00 AM – 8:00 PM IST</p>
+              </div>
+
+              Submit Inquiry Form for Couture Consultation
+              <div class="p-4 bg-surface border border-subtle mt-4">
+                <h3 class="fs-4 font-display mb-3">Submit Inquiry</h3>
+                <form id="inquiryForm">
+                  <div class="mb-3">
+                    <input type="text" class="form-control rounded-0 border-0 border-bottom border-secondary bg-transparent" placeholder="Full Name" name="Inquiry_Name" required />
+                  </div>
+                  <div class="mb-3">
+                    <input type="email" class="form-control rounded-0 border-0 border-bottom border-secondary bg-transparent" placeholder="Email Address" name="Inquiry_Email" required />
+                  </div>
+                  <div class="mb-3">
+                    <textarea class="form-control rounded-0 border-0 border-bottom border-secondary bg-transparent" rows="2" placeholder="Inquiry Details / Occasion" name="Inquiry_Details" required></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-dark w-100">Submit Inquiry</button>
+                  <div id="inquiryResponse" class="mt-2"></div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row g-4 pb-5 align-items-start">
+          <!-- Footer Logo strictly left aligned and noticeably larger -->
+          <div class="col-md-4 text-start">
+            <div class="d-flex align-items-center gap-3 mb-3 justify-content-start">
+              <img src="/public/assets/logo.jpg" alt="Maison Nirya" class="rounded-circle shadow-sm" style="width: 96px; height: 96px; object-fit: cover; border: 2px solid var(--color-gold);" />
+              <span class="font-display fs-2" style="font-family: var(--font-display); letter-spacing: 0.04em;">Maison Nirya</span>
+            </div>
+            <p class="text-secondary small" style="line-height: 1.6; max-width: 320px;">Discover elegance and quality with our luxury Indian haute couture and bridal collections crafted with passion.</p>
+          </div>
+          <div class="col-md-2 text-start">
+            <h4 class="fs-6 font-display text-uppercase mb-3" style="letter-spacing: 0.1em;">Quick Links</h4>
+            <ul class="list-unstyled d-flex flex-column gap-2 small">
+              <li><a href="#home" class="text-link">Home</a></li>
+              <li><a href="#about" class="text-link">About Us</a></li>
+              <li><a href="#women" class="text-link">Women</a></li>
+              <li><a href="#men" class="text-link">Men</a></li>
+              <!-- <li><a href="#contact" class="text-link">Contact Us</a></li> -->
+            </ul>
+          </div>
+          <div class="col-md-3 text-start">
+            <h4 class="fs-6 font-display text-uppercase mb-3" style="letter-spacing: 0.1em;">Contact</h4>
+            <p class="text-secondary small mb-1">123 Luxury Street, Fashion City</p>
+            <p class="text-secondary small mb-1">Phone: +91 94980 68085</p>
+            <p class="text-secondary small">Email: MaisonNirya@gmail.com</p>
+          </div>
+          <div class="col-md-3 text-start">
+            <h4 class="fs-6 font-display text-uppercase mb-3" style="letter-spacing: 0.1em;">Follow Us</h4>
+            <div class="d-flex flex-column gap-2">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-link">
+                <i class="fa-brands fa-instagram"></i> <span>Instagram</span>
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-link">
+                <i class="fa-brands fa-facebook-f"></i> <span>Facebook</span>
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="footer-social-link">
+                <i class="fa-brands fa-x-twitter"></i> <span>Twitter / X</span>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-social-link">
+                <i class="fa-brands fa-linkedin-in"></i> <span>LinkedIn</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="border-top pt-4 text-center text-secondary small" style="letter-spacing: 0.04em;">
+          <span>&copy; <span id="currentYear"></span> Maison Nirya. All rights reserved.</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- Application Vanilla JS Logic -->
+    <script>
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+      // Navbar scroll effect
+      window.addEventListener('scroll', function() {
+        const header = document.getElementById('siteHeader');
+        if (window.scrollY > 40) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+
+      // Active Menu State (Scrollspy & Click)
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('#desktopNav .nav-link-custom');
+
+      function highlightNavOnScroll() {
+        const scrollY = window.pageYOffset;
+        sections.forEach(current => {
+          const sectionHeight = current.offsetHeight;
+          const sectionTop = current.offsetTop - 120;
+          const sectionId = current.getAttribute('id');
+
+          if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            navLinks.forEach(link => {
+              link.classList.remove('active');
+              if (link.getAttribute('href') === '#' + sectionId) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+      }
+
+      window.addEventListener('scroll', highlightNavOnScroll);
+
+      // Theme toggle
+      function toggleTheme() {
+        const html = document.documentElement;
+        const current = html.getAttribute('data-theme');
+        const next = current === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('aurelia-theme', next);
+        updateThemeIcon(next);
+      }
+
+      function updateThemeIcon(theme) {
+        const icon = document.getElementById('themeIcon');
+        if (theme === 'dark') {
+          icon.className = 'fa-solid fa-sun fs-5';
+        } else {
+          icon.className = 'fa-solid fa-moon fs-5';
+        }
+      }
+      updateThemeIcon(document.documentElement.getAttribute('data-theme') || 'light');
+
+      // Collections Data
+      const womenInitial = [
+        { id: 'w1', name: 'Aurelia Crimson Bridal Lehenga', category: 'Lehengas', price: 345000, fabric: 'Raw Silk & Tissue', craft: 'Zardozi & Dabka', image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=85', hoverImage: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=85' },
+        { id: 'w2', name: 'Ivory Organza Jamawar Saree', category: 'Sarees', price: 185000, fabric: 'Kanjivaram Silk', craft: 'Handloom Brocade', image: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=85', hoverImage: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=85' },
+        { id: 'w3', name: 'Champagne Tissue Anarkali', category: 'Anarkalis', price: 145000, fabric: 'Tissue Organza', craft: 'Gota Patti & Mukaish', image: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&q=85', hoverImage: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=85' },
+        { id: 'w4', name: 'Emerald Zardozi Silk Lehenga', category: 'Lehengas', price: 310000, fabric: 'Pure Katan Silk', craft: 'Hand-Cut Zari', image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=85', hoverImage: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&q=85' },
+        { id: 'w5', name: 'Banarasi Brocade Jamdani Saree', category: 'Sarees', price: 165000, fabric: 'Organza Silk', craft: 'Kadwa Weave', image: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=85', hoverImage: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=85' },
+        { id: 'w6', name: 'Crimson Velvet Reception Gown', category: 'Anarkalis', price: 215000, fabric: 'Silk Velvet', craft: 'Resham & Cut-Dana', image: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=85', hoverImage: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=85' },
+        { id: 'w7', name: 'Pastel Pink Gota Patti Set', category: 'Anarkalis', price: 95000, fabric: 'Chanderi Silk', craft: 'Gota Applique', image: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=800&q=85', hoverImage: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&q=85' },
+        { id: 'w8', name: 'Pearl Embellished Sharara', category: 'Lehengas', price: 240000, fabric: 'Tissue Silk', craft: 'Pearl & Sequins', image: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=85', hoverImage: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=85' }
+      ];
+
+      const womenExtended = [
+        { id: 'w9', name: 'Royal Gold Tissue Lehenga', category: 'Lehengas', price: 380000, fabric: 'Metallic Tissue', craft: 'Nakshi & Marori', image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=85', hoverImage: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=85' },
+        { id: 'w10', name: 'Hand-Painted Pichwai Saree', category: 'Sarees', price: 195000, fabric: 'Pure Organza', craft: 'Hand-Painted Art', image: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=85', hoverImage: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=85' },
+        { id: 'w11', name: 'Kundan Embroidered Peplum Suit', category: 'Anarkalis', price: 175000, fabric: 'Raw Silk', craft: 'Kundan Embroidery', image: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&q=85', hoverImage: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=85' },
+        { id: 'w12', name: 'Antique Zari Lehenga', category: 'Lehengas', price: 290000, fabric: 'Dupion Silk', craft: 'Antique Zardozi', image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=85', hoverImage: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=800&q=85' },
+        { id: 'w13', name: 'Tissue Chanderi Festive Saree', category: 'Sarees', price: 125000, fabric: 'Chanderi Silk', craft: 'Zari Border Weave', image: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=85', hoverImage: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=85' },
+        { id: 'w14', name: 'Mint Green Layered Anarkali', category: 'Anarkalis', price: 155000, fabric: 'Georgette Tissue', craft: 'Thread & Sequins', image: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=85', hoverImage: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&q=85' },
+        { id: 'w15', name: 'Sapphire Velvet Bridal Lehenga', category: 'Lehengas', price: 360000, fabric: 'Silk Velvet', craft: 'Dabka & Zari', image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=85', hoverImage: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=85' },
+        { id: 'w16', name: 'Ivory Raw Silk Sharara Set', category: 'Lehengas', price: 210000, fabric: 'Raw Silk', craft: 'Resham & Zari', image: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=85', hoverImage: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&q=85' }
+      ];
+
+      const menInitial = [
+        { id: 'm1', name: 'Royal Velvet Zardozi Sherwani', category: 'Sherwanis', price: 220000, fabric: 'Midnight Velvet', craft: 'Marori & Resham', image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=85', hoverImage: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=85' },
+        { id: 'm2', name: 'Ivory Raw Silk Bandhgala', category: 'Bandhgalas', price: 135000, fabric: 'Raw Silk', craft: 'Metal Buttons', image: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=85', hoverImage: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=85' },
+        { id: 'm3', name: 'Emerald Brocade Achkan', category: 'Sherwanis', price: 185000, fabric: 'Banarasi Brocade', craft: 'Zari Weave', image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=85', hoverImage: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=85' },
+        { id: 'm4', name: 'Charcoal Jacquard Indo-Western', category: 'Indo-Western', price: 155000, fabric: 'Jacquard Silk', craft: 'Structured Tailoring', image: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=85', hoverImage: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=85' },
+        { id: 'm5', name: 'Gold Brocade Jodhpuri Suit', category: 'Bandhgalas', price: 195000, fabric: 'Brocade Silk', craft: 'Royal Crest Buttons', image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=85', hoverImage: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=85' },
+        { id: 'm6', name: 'Black Velvet Tuxedo Sherwani', category: 'Sherwanis', price: 245000, fabric: 'Black Velvet', craft: 'Satin Lapel & Zardosi', image: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=85', hoverImage: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=85' },
+        { id: 'm7', name: 'Mint Silk Kurta & Nehru Jacket', category: 'Bandhgalas', price: 85000, fabric: 'Dupion Silk', craft: 'Thread Embroidery', image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=85', hoverImage: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=85' },
+        { id: 'm8', name: 'Burgundy Raw Silk Angrakha', category: 'Sherwanis', price: 98000, fabric: 'Raw Silk', craft: 'Gota & Threadwork', image: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=85', hoverImage: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=85' }
+      ];
+
+      const menExtended = [
+        { id: 'm9', name: 'Navy Asymmetrical Indo-Western', category: 'Indo-Western', price: 165000, fabric: 'Matka Silk', craft: 'Modern Draping', image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=85', hoverImage: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=85' },
+        { id: 'm10', name: 'Chikankari Embroidered Kurta', category: 'Bandhgalas', price: 75000, fabric: 'Mulmul Silk', craft: 'Shadow Work', image: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=85', hoverImage: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=85' },
+        { id: 'm11', name: 'Jamawar Silk Nehru Jacket Set', category: 'Bandhgalas', price: 115000, fabric: 'Jamawar Silk', craft: 'Brocade Weave', image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=85', hoverImage: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=85' },
+        { id: 'm12', name: 'Sapphire Jacquard Sherwani', category: 'Sherwanis', price: 230000, fabric: 'Jacquard Silk', craft: 'Antique Metal Work', image: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=85', hoverImage: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=85' },
+        { id: 'm13', name: 'Emerald Velvet Bandhgala', category: 'Bandhgalas', price: 145000, fabric: 'Silk Velvet', craft: 'Gold Thread Detailing', image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=85', hoverImage: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=85' },
+        { id: 'm14', name: 'Royal Brocade Achkan with Stole', category: 'Sherwanis', price: 210000, fabric: 'Banarasi Silk', craft: 'Zari Brocade', image: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=85', hoverImage: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=85' },
+        { id: 'm15', name: 'Charcoal Grey Woolen Bandhgala', category: 'Bandhgalas', price: 125000, fabric: 'Merino Wool', craft: 'Tailored Fit', image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=85', hoverImage: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=85' },
+        { id: 'm16', name: 'Champagne Silk Wedding Sherwani', category: 'Sherwanis', price: 250000, fabric: 'Pure Raw Silk', craft: 'Zardozi & Pearls', image: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=85', hoverImage: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=85' }
+      ];
+
+      function formatPrice(amount) {
+        return '₹' + amount.toLocaleString('en-IN');
+      }
+
+      function renderCard(p) {
+        return `
+          <div class="col-sm-6 col-lg-3">
+            <div class="product-card">
+              <div class="product-img-wrap">
+                <img src="${p.image}" alt="${p.name}" class="product-img-base" loading="lazy" />
+                <img src="${p.hoverImage}" alt="" class="product-img-hover" loading="lazy" />
+              </div>
+              <div class="mt-3">
+                <h3 class="fs-5 font-display mb-1">${p.name}</h3>
+                <p class="small text-secondary mb-1">${p.fabric} · ${p.craft}</p>
+                <div class="d-flex justify-content-between align-items-center mt-2">
+                  <span class="small fw-medium">${formatPrice(p.price)}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      let activeWomenCat = 'all';
+      let activeMenCat = 'all';
+
+      function renderWomen() {
+        const filteredInit = activeWomenCat === 'all' ? womenInitial : womenInitial.filter(p => p.category === activeWomenCat);
+        const filteredExt = activeWomenCat === 'all' ? womenExtended : womenExtended.filter(p => p.category === activeWomenCat);
+        
+        document.getElementById('womenInitialGrid').innerHTML = filteredInit.length > 0 ? filteredInit.map(renderCard).join('') : '<p class="text-secondary text-center py-4">No initial items match this filter.</p>';
+        document.getElementById('womenExtendedGrid').innerHTML = filteredExt.length > 0 ? filteredExt.map(renderCard).join('') : '<p class="text-secondary text-center py-4">No extended items match this filter.</p>';
+      }
+
+      function renderMen() {
+        const filteredInit = activeMenCat === 'all' ? menInitial : menInitial.filter(p => p.category === activeMenCat);
+        const filteredExt = activeMenCat === 'all' ? menExtended : menExtended.filter(p => p.category === activeMenCat);
+        
+        document.getElementById('menInitialGrid').innerHTML = filteredInit.length > 0 ? filteredInit.map(renderCard).join('') : '<p class="text-secondary text-center py-4">No initial items match this filter.</p>';
+        document.getElementById('menExtendedGrid').innerHTML = filteredExt.length > 0 ? filteredExt.map(renderCard).join('') : '<p class="text-secondary text-center py-4">No extended items match this filter.</p>';
+      }
+
+      function filterWomen(cat, btn) {
+        activeWomenCat = cat;
+        const parent = btn.parentElement;
+        parent.querySelectorAll('.btn-outline-dark').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderWomen();
+      }
+
+      function filterMen(cat, btn) {
+        activeMenCat = cat;
+        const parent = btn.parentElement;
+        parent.querySelectorAll('.btn-outline-dark').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderMen();
+      }
+
+      function toggleCollections(containerId, btnId) {
+        const container = document.getElementById(containerId);
+        const btn = document.getElementById(btnId);
+        container.classList.toggle('expanded');
+        const isExpanded = container.classList.contains('expanded');
+        btn.innerHTML = isExpanded 
+          ? 'View Less <i class="fa-solid fa-arrow-up ms-2"></i>' 
+          : 'Explore More Collections <i class="fa-solid fa-arrow-down ms-2"></i>';
+      }
+
+      function openMobileMenu() {
+        const myOffcanvas = new bootstrap.Offcanvas(document.getElementById('mobileMenuDrawer'));
+        myOffcanvas.show();
+      }
+
+      function closeMobileMenu() {
+        const el = document.getElementById('mobileMenuDrawer');
+        const bsOffcanvas = bootstrap.Offcanvas.getInstance(el);
+        if (bsOffcanvas) bsOffcanvas.hide();
+      }
+
+      // Auto-close offcanvas on mobile link click & smooth scroll
+      document.querySelectorAll('#mobileNavLinks a').forEach(link => {
+        link.addEventListener('click', function(e) {
+          const targetId = this.getAttribute('href');
+          const offcanvasEl = document.getElementById('mobileMenuDrawer');
+          const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvasEl);
+          if (bsOffcanvas) {
+            bsOffcanvas.hide();
+          }
+          if (targetId && targetId.startsWith('#')) {
+            e.preventDefault();
+            const targetEl = document.querySelector(targetId);
+            if (targetEl) {
+              targetEl.scrollIntoView({ behavior: 'smooth' });
+            }
+          }
+        });
+      });
+
+      // Google Apps Script Form Submission Handlers
+      const GOOGLE_APPS_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE'; // Replace with your deployed Web App URL
+
+      // document.getElementById('contactForm').addEventListener('submit', function(e) {
+      //   e.preventDefault();
+      //   const form = this;
+      //   const btn = form.querySelector('button[type="submit"]');
+      //   const originalText = btn.innerHTML;
+      //   const responseDiv = document.getElementById('contactResponse');
+
+      //   btn.disabled = true;
+      //   btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin me-2"></i> Sending...';
+      //   responseDiv.innerHTML = '';
+
+      //   const formData = {
+      //     FormType: 'Contact Us',
+      //     Name: form.querySelector('[name="Name"]').value,
+      //     Email: form.querySelector('[name="Email"]').value,
+      //     Message: form.querySelector('[name="Message"]').value
+      //   };
+
+      //   fetch(GOOGLE_APPS_SCRIPT_URL, {
+      //     method: 'POST',
+      //     mode: 'no-cors',
+      //     headers: { 'Content-Type': 'application/json' },
+      //     body: JSON.stringify(formData)
+      //   })
+      //   .then(() => {
+      //     responseDiv.innerHTML = '<div class="alert alert-success rounded-0 mt-3 small py-2">Thank you! Your message has been sent successfully.</div>';
+      //     form.reset();
+      //   })
+      //   .catch(err => {
+      //     responseDiv.innerHTML = '<div class="alert alert-danger rounded-0 mt-3 small py-2">Failed to send. Please verify your Web App URL or contact us directly.</div>';
+      //   })
+      //   .finally(() => {
+      //     btn.disabled = false;
+      //     btn.innerHTML = originalText;
+      //   });
+      // });
+
+      // document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+      //   e.preventDefault();
+      //   const form = this;
+      //   const btn = form.querySelector('button[type="submit"]');
+      //   const originalText = btn.innerHTML;
+      //   const responseDiv = document.getElementById('inquiryResponse');
+
+      //   btn.disabled = true;
+      //   btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin me-2"></i> Submitting...';
+      //   responseDiv.innerHTML = '';
+
+      //   const formData = {
+      //     FormType: 'Couture Inquiry',
+      //     Inquiry_Name: form.querySelector('[name="Inquiry_Name"]').value,
+      //     Inquiry_Email: form.querySelector('[name="Inquiry_Email"]').value,
+      //     Inquiry_Details: form.querySelector('[name="Inquiry_Details"]').value
+      //   };
+
+      //   fetch(GOOGLE_APPS_SCRIPT_URL, {
+      //     method: 'POST',
+      //     mode: 'no-cors',
+      //     headers: { 'Content-Type': 'application/json' },
+      //     body: JSON.stringify(formData)
+      //   })
+      //   .then(() => {
+      //     responseDiv.innerHTML = '<div class="alert alert-success rounded-0 mt-3 small py-2">Thank you! Your inquiry has been submitted successfully.</div>';
+      //     form.reset();
+      //   })
+      //   .catch(err => {
+      //     responseDiv.innerHTML = '<div class="alert alert-danger rounded-0 mt-3 small py-2">Failed to submit. Please verify your Web App URL or contact us directly.</div>';
+      //   })
+      //   .finally(() => {
+      //     btn.disabled = false;
+      //     btn.innerHTML = originalText;
+      //   });
+      // });
+
+      // Initial render
+      renderWomen();
+      renderMen();
+    </script>
+  </body>
+</html>
